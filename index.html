@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Google Calendar API в Mini App</title>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        function initCalendar() {
+            gapi.load('client', () => {
+                gapi.client.init({
+                    apiKey: 'ВАШ_API_KEY',
+                    discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+                }).then(() => {
+                    console.log('Google API инициализирован');
+                    // Здесь можно загружать события из календаря
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="initCalendar()">Загрузить календарь</button>
+    <div id="events"></div>
+</body>
+</html>
